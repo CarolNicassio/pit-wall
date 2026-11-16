@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Pit-Wall</title>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Topbar -->
+  <header class="topbar">
+    <div class="logo">PIT<span>WALL</span></div>
+    <a href="#pilotos">Pilotos</a>
+    <a href="#classificacao">Classificação</a>
+    <a href="#ingressos">Ingressos</a>
+    <a href="#ingressos" class="btn-primary">Comprar Ingresso</a>
+  </header>
+
+
+  <!-- Hero (Título + Imagem + Estatísticas) -->
+  <section class="hero-container">
+    <div class="titulo">
+      <p>Autódromo de Interlagos · novembro de 2026</p>
+      <h1>GP DE<br><span>SÃO PAULO</span></h1>
+      <p>71 voltas, 22 carros no grid e a torcida brasileira empurrando o Bortoleto na reta.</p>
+      <div class="hero-botoes">
+        <a href="#ingressos" class="btn-red">Garantir meu lugar</a>
+        <a href="#classificacao" class="btn-outline">Ver classificação</a>
+      </div>
+    </div>
+
+
+    <!-- Imagem em corte diagonal com as estatísticas -->
+    <div class="hero-image">
+      <img src="img/pexels-jonathanborba-29276537.jpg" alt="GP de São Paulo - Interlagos">
+      <div class="stats-overlay">
+        <p><strong>71</strong> voltas</p>
+        <p><strong>4.309</strong> km por volta</p>
+        <p><strong>15</strong> curvas</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Faixa Zebrada da F1 -->
+  <div class="zebra-strip"></div>
+
+        <BR></BR>
+        <div class="kerb"></div>
+        <section id="pilotos">
+            <h2>Grid de pilotos</h2>
+            <div class="grid-pilotos">
+                <article class="card-piloto">
+                    <p>16</p>
+                    <h3>Charles Leclerc</h3>
+                    <p>Ferrari</p>
+                    <strong>81</strong>
+                </article>
+
+                <article class="card-piloto">
+                    <p>81</p>
+                    <h3>Oscar Piastri</h3>
+                    <p>McLaren</p>
+                    <strong>63</strong>
+                </article>
+
+                <article class="card-piloto">
+                    <p>63</p>
+                    <h3>George Russell</h3>
+                    <p>Mercedes</p>
+                    <strong>5</strong>
+                </article>
+
+                <article class="card-piloto">
+                    <p>5</p>
+                    <h3>Gabriel Bortoleto</h3>
+                    <p>Audi</p>
+                    <strong>02</strong>
+                </article>
+            </div>
+        </section>
+
+        <section id="classificacao">
+            <h2>Classificação</h2>
+            <form class="filtros">
+                <div class="form-group">
+                    <label for="buscar">Buscar piloto</label>
+                    <input type="text" id="buscar" name="buscar" placeholder="Nome ou equipe...">
+                </div>
+
+                <div class="form-group">
+                    <label for="equipe">Equipe</label>
+                    <select id="equipe" name="equipe">
+                        <option value="">Todas as equipes</option>
+                        <option value="mclaren">McLaren</option>
+                        <option value="ferrari">Ferrari</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="audi">Audi</option>
+                    </select>
+                </div>
+
+                <button type="submit">Filtrar</button>
+            </form>
+
+            <table class="tabela-classificacao">
+                <thead>
+                    <tr>
+                        <th>Pos.</th>
+                        <th>Piloto</th>
+                        <th>Equipe</th>
+                        <th>Vitórias</th>
+                        <th>Diferença</th>
+                        <th>Pontos</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td><td>Oscar Piastri</td><td>McLaren</td><td>6</td><td>LÍDER</td><td>366</td>
+                    </tr>
+                    <tr>
+                        <td>2</td><td>Charles Leclerc</td><td>Ferrari</td><td>5</td><td>−18</td><td>348</td>
+                    </tr>
+                    <tr>
+                        <td>3</td><td>George Russell</td><td>Mercedes</td><td>4</td><td>−41</td><td>325</td>
+                    </tr>
+                    <tr>
+                        <td>4</td><td>Gabriel Bortoleto</td><td>Audi</td><td>0</td><td>−298</td><td>68</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="ingressos">
+            <h2>Ingressos</h2>
+            <p>Escolha o setor e venha ver a decisão do título de perto.</p>
+            <p>Últimos 12 lugares no Setor da Reta!</p>
+
+            <div class="setores">
+                <div><strong>Arquibancada</strong><p>R$ 480</p></div>
+                <div><strong>Setor da Reta</strong><p>R$ 890</p></div>
+                <div><strong>Box VIP</strong><p>R$ 2.400</p></div>
+            </div>
+
+            <form class="form-ingresso">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="nome">Nome completo</label>
+                        <input type="text" id="nome" name="nome" placeholder="Como está no documento" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="voce@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="setor">Setor</label>
+                        <select id="setor" name="setor" required>
+                            <option value="">Escolha o setor</option>
+                            <option value="arquibancada">Arquibancada</option>
+                            <option value="reta">Setor da Reta</option>
+                            <option value="vip">Box VIP</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dia">Dia</label>
+                        <input type="date" id="dia" name="dia" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantidade">Ingressos</label>
+                        <input type="number" id="quantidade" name="quantidade" min="1" max="6" value="2" required>
+                        <p>Até 6 por pessoa.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="perfil">Seu perfil (opcional)</label>
+                        <input type="url" id="perfil" name="perfil" placeholder="https://instagram.com/...">
+                    </div>
+
+                    <div class="form-group full">
+                        <label for="foto">Foto do perfil</label>
+                        <input type="file" id="foto" name="foto" accept="image/*">
+                        <p>JPG ou PNG · a melhor foto aparece no telão da reta!</p>
+                    </div>
+
+                    <div class="form-group full">
+                        <label for="recado">Recado para o seu piloto</label>
+                        <textarea id="recado" name="recado" rows="3" placeholder="Vai, Bortoleto! Interlagos é sua casa..."></textarea>
+                    </div>
+
+                    <div class="form-group full">
+                        <button type="submit">Reservar ingressos</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2026 Caroline Queiroz Nicassio</p>
+        <p>
+            <a style="color: #E68AA4;" href="malito: cqueiroznicassioc@icloud.com">cqueiroznicassioc@icloud.com</a>
+            <a style="color: #E68AA4;" href="tel: +5511932140718">(11) 93214-0718</a>
+        </p>
+    </footer>
+</body>
+</html>

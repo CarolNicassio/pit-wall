@@ -1,0 +1,749 @@
+
+:root {
+    --black: #0b0b0f;
+    --panel: #16161d;
+    --red: #e10600;
+    --white: #f5f5f7;
+    --font: 'Titillium Web', 'Segoe UI', sans-serif;
+    --line: #292931;
+    --muted: #92929b;
+    --ferrari: #e10600;
+    --mclaren: #ff8700;
+    --mercedes: #00d2be;
+    --audi: #a5a5ad;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font);
+    background: var(--black);
+    color: var(--white);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* TOPO */
+topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 4rem;
+  background-color: var(--bg-dark);
+  border-bottom: 1px solid var(--border-color);
+}
+
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 900;
+  font-style: italic;
+}
+.logo span { color: var(--red-f1);
+color: #e10600; }
+
+
+.topbar a:not(.btn-primary) {
+  color: var(--text-gray);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  margin: 0 1rem;
+}
+
+
+.btn-primary {
+  background-color: var(--red-f1);
+  color: #fff;
+  padding: 0.6rem 1.4rem;
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+
+/* ==========================================================================
+   HERO / CABEÇALHO DIAGONAL COM SUA IMAGEM
+   ========================================================================== */
+.hero-container {
+  position: relative;
+  display: flex;
+  min-height: 480px;
+  background-color: var(--bg-dark);
+  overflow: hidden;
+  padding: 4rem;
+  align-items: center;
+}
+
+
+.titulo {
+  max-width: 480px;
+  z-index: 2;
+}
+
+
+.titulo p:first-child {
+  color: var(--red-f1);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  color: #e10600;
+}
+
+
+.titulo h1 {
+  font-size: 4.2rem;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 0.92;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+
+.titulo h1 span { color: var(--red-f1);
+color: #e10600; }
+
+
+.titulo p:nth-of-type(2) {
+  color: var(--text-gray);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+
+.hero-botoes {
+  display: flex;
+  gap: 1rem;
+}
+
+
+.btn-red {
+  background-color: var(--red-f1);
+  color: #fff;
+  padding: 0.8rem 1.6rem;
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 0.85rem;
+  background-color: #e10600;
+}
+
+
+.btn-outline {
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 0.8rem 1.6rem;
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+
+/* Corte Angular da Imagem + Listra Vermelha */
+.hero-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 58%;
+  height: 100%;
+  background-color: var(--red-f1);
+  clip-path: polygon(22% 0, 100% 0, 100% 100%, 0% 100%);
+  z-index: 1;
+}
+
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  clip-path: polygon(calc(22% + 14px) 0, 100% 0, 100% 100%, 14px 100%);
+  filter: brightness(0.75);
+}
+
+
+.stats-overlay {
+  position: absolute;
+  bottom: 2.5rem;
+  right: 4rem;
+  display: flex;
+  gap: 3rem;
+  z-index: 3;
+}
+
+
+.stats-overlay p {
+  text-align: center;
+  font-size: 0.7rem;
+  color: #d1d5db;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+
+.stats-overlay p strong {
+  display: block;
+  font-size: 2.6rem;
+  font-weight: 900;
+  font-style: italic;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 0.2rem;
+}
+
+
+.zebra-strip {
+  height: 8px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--red-f1) 0px,
+    var(--red-f1) 36px,
+    #ffffff 36px,
+    #ffffff 72px
+  );
+}
+
+.hero > p:first-child {
+    grid-area: local;
+    color: var(--red);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero h1 {
+    grid-area: titulo;
+    font-size: 5.5rem;
+    font-style: italic;
+    font-weight: 900;
+    line-height: .9;
+    text-transform: uppercase;
+}
+
+.hero > p:nth-of-type(2) {
+    grid-area: descricao;
+    color: var(--muted);
+    max-width: 430px;
+    font-size: 13px;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--red);
+}
+
+.hero-buttons {
+    grid-area: botoes;
+    display: flex;
+    gap: 12px;
+}
+
+.hero-buttons a {
+    padding: 12px 22px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: var(--red);
+    color: var(--white);
+}
+
+.hero-buttons a:last-child {
+    background: transparent;
+    border: 1px solid var(--white);
+}
+
+.hero-info {
+    grid-area: info;
+    display: flex;
+    gap: 20px;
+}
+
+.hero-info > div {
+    border-left: 1px solid var(--line);
+    padding: 5px 14px;
+}
+
+.hero-info strong {
+    display: block;
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 900;
+}
+
+.hero-info p {
+    color: var(--muted);
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.hero-image {
+    grid-area: foto;
+    height: 100%;
+    min-height: 250px;
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-image::before {
+    content: "";
+    position: absolute;
+    left: -15px;
+    top: 0;
+    height: 100%;
+    width: 25px;
+    background: var(--red);
+    transform: skew(-18deg);
+    z-index: 1;
+}
+.hero {
+    height: 330px;
+    min-height: 330px;
+    overflow: hidden;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ZEBRA DA PISTA */
+.kerb {
+    height: 12px;
+    background: repeating-linear-gradient(90deg,
+        var(--red) 0, var(--red) 40px,
+        var(--white) 40px, var(--white) 80px);
+}
+
+/* SEÇÕES */
+main > section {
+    padding: 35px 9.5%;
+}
+
+main > section h2 {
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+main > section h2::before {
+    content: "01";
+    color: var(--red);
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+#classificacao h2::before {
+    content: "02";
+}
+
+#ingressos h2::before {
+    content: "03";
+}
+
+/* PILOTOS */
+.grid-pilotos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+}
+
+.card-piloto {
+    background: var(--panel);
+    border-top: 4px solid var(--team);
+    padding: 12px;
+    transition: transform .3s;
+}
+
+.card-piloto:nth-child(1) {
+    --team: var(--ferrari);
+}
+
+.card-piloto:nth-child(2) {
+    --team: var(--mclaren);
+}
+
+.card-piloto:nth-child(3) {
+    --team: var(--mercedes);
+}
+
+.card-piloto:nth-child(4) {
+    --team: var(--audi);
+}
+
+.card-piloto > p:first-child {
+    font-size: 4rem;
+    opacity: .35;
+    font-weight: 900;
+    font-style: italic;
+    line-height: 1;
+}
+
+.card-piloto h3 {
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.card-piloto p:nth-of-type(2) {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.card-piloto > strong {
+    display: none;
+}
+
+.card-piloto:hover {
+    transform: translateY(-6px);
+}
+
+/* FILTROS */
+.filtros {
+    display: flex;
+    align-items: end;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+
+.form-group label {
+    color: var(--muted);
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.filtros input,
+.filtros select {
+    width: 100%;
+    background: var(--black);
+    color: var(--white);
+    border: 1px solid var(--line);
+    padding: 10px;
+}
+
+.filtros button,
+.form-ingresso button {
+    background: var(--red);
+    color: var(--white);
+    border: 1px solid var(--red);
+    padding: 12px 22px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* CLASSIFICAÇÃO */
+.tabela-classificacao {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--panel);
+    font-size: 12px;
+}
+
+.tabela-classificacao th {
+    color: var(--muted);
+    text-transform: uppercase;
+}
+
+.tabela-classificacao th,
+.tabela-classificacao td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--line);
+}
+
+.tabela-classificacao td:first-child {
+    font-weight: 900;
+}
+
+.tabela-classificacao tbody tr:first-child {
+    background: rgba(225,6,0,.12);
+}
+
+.tabela-classificacao tbody tr:first-child td:first-child {
+    background: var(--red);
+    color: var(--white);
+}
+
+.tabela-classificacao tbody tr:hover {
+    background: #1e1e28;
+}
+
+/* INGRESSOS */
+#ingressos {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 12px 35px;
+    align-items: start;
+}
+
+#ingressos h2 {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+}
+
+#ingressos > p {
+    grid-column: 1;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+#ingressos > p:nth-of-type(2) {
+    color: #ffe000;
+    background: rgba(255,224,0,.08);
+    border-left: 3px solid #ffe000;
+    padding: 10px;
+    font-weight: 700;
+}
+
+.setores {
+    grid-column: 1;
+}
+
+.setores > div {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 12px;
+}
+
+.setores p {
+    color: var(--red);
+    font-weight: 700;
+}
+
+.form-ingresso {
+    grid-column: 2;
+    grid-row: 2 / span 3;
+    background: var(--panel);
+    border-top: 4px solid var(--red);
+    padding: 22px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-group.full {
+    grid-column: 1 / -1;
+}
+
+.form-ingresso input,
+.form-ingresso select,
+.form-ingresso textarea {
+    width: 100%;
+    background: var(--black);
+    color: var(--white);
+    border: 1px solid var(--line);
+    padding: 11px;
+    font-size: 12px;
+    font-family: var(--font);
+}
+
+.form-ingresso input[type="file"] {
+    padding: 8px;
+}
+
+.form-ingresso textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-ingresso .form-group p {
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.form-ingresso button {
+    width: 100%;
+}
+
+/* RODAPÉ */
+footer {
+    border-top: 1px solid var(--line);
+    padding: 20px 4%;
+    text-align: center;
+    color: var(--muted);
+    font-size: 16px;
+}
+
+footer a {
+    color: #e68aa4;
+    margin: 0 5px;
+    font-size: 16px;
+}
+
+/* CELULAR */
+@media (max-width: 800px) {
+    .top-section {
+        padding: 12px 4%;
+    }
+
+    .top-section nav {
+        display: none;
+    }
+
+    .top-section > a:last-child {
+        padding: 10px;
+        font-size: 9px;
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        min-height: auto;
+        padding: 25px 4%;
+        background: var(--black);
+    }
+
+    .hero h1 {
+        font-size: 3.2rem;
+    }
+
+    .hero > p:nth-of-type(2) {
+        max-width: 100%;
+    }
+
+    .hero-buttons {
+        flex-wrap: wrap;
+    }
+
+    .hero-info {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .hero-info > div {
+        flex: 1;
+        padding: 5px;
+    }
+
+    .hero-info strong {
+        font-size: 1.5rem;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 200px;
+        min-height: 200px;
+    }
+
+    .hero-image img {
+        min-height: 200px;
+    }
+
+    main > section {
+        padding: 25px 4%;
+    }
+
+    main > section h2 {
+        font-size: 1.6rem;
+    }
+
+    .grid-pilotos {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .card-piloto {
+        padding: 10px;
+    }
+
+    .card-piloto > p:first-child {
+        font-size: 3rem;
+    }
+
+    .card-piloto h3 {
+        font-size: .85rem;
+    }
+
+    .filtros {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filtros button {
+        width: 100%;
+    }
+
+    #classificacao {
+        overflow-x: auto;
+    }
+
+    .tabela-classificacao {
+        min-width: 620px;
+    }
+
+    .tabela-classificacao td {
+        white-space: nowrap;
+    }
+
+    #ingressos {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    #ingressos h2,
+    #ingressos > p,
+    .setores,
+    .form-ingresso {
+        grid-column: 1;
+    }
+
+    .form-ingresso {
+        grid-row: auto;
+        padding: 15px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full {
+        grid-column: 1;
+    }
+}
